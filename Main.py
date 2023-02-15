@@ -2,8 +2,8 @@ from pygame import *
 from settings import *
 from title import *
 from Game1 import *
-from Game2 import *
 from Game3 import *
+from Game2 import *
 from Game4 import *
 from hallway import *
 
@@ -15,10 +15,10 @@ class Game:
         self.screen  = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.end = False
         self.title = Title_Screen(user)
-        self.screen_num = 1
+        self.screen_num = 4
         self.game1 = Aerial()
         self.game2 = Platformer()
-        self.game3 = game3()
+        self.game3 = Maze()
         self.game4 = game4()
         self.hallway = Hallway(user)
         self.clock = time.Clock()

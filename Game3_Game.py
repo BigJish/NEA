@@ -1,8 +1,8 @@
 from pygame import *
 from Maps import *
-from Game2_Wall import *
-from Game2_Player import *
-from Game2_Exit import *
+from Game3_Wall import *
+from Game3_Player import *
+from Game3_Exit import *
 
 class AmMaze:
     def __init__(self):

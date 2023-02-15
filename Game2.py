@@ -1,28 +1,39 @@
-from pygame import *
-from text import *
-from Game2_G import *
+from settings import *
+from Game2_Title import *
+from Game2_Player import *
+from Game2_Platform import *
 
 class Platformer:
     def __init__(self):
-        self.screen = display.get_surface()
-        self.text = Text()
-        self.AmMaze = AmMaze()
-        self.scrn = 1
-        
+        self.win = display.get_surface()
+        self.visible_sprites = sprite.Group()
+        self.obsicle_sprites = sprite.Group()
+        self.title = Title()
+        self.player = Player(self.visible_sprites, (500,400), self.obsicle_sprites)
+        self.screen = 1
+        self.offset = 0
+        self.setup()
+    
+    def setup(self):
+        for level in range (1,20):
+            atLevel = r(1, 4)
+            for i in range(0, atLevel):
+                yVal = r(20,100)
+                Platform([self.visible_sprites, self.obsicle_sprites], (r(0,900),yVal+420+(level*-80)))
+            
     def run(self):
-        if self.scrn == 1:
-            self.screen.fill((60,60,60))
-            self.text.txt("AmMaze", 32, (255,255,255), (500,250))
-            self.text.txt("Press Enter Start", 32, (255,255,255), (500,350))
+        self.win.fill((60,60,60))
+        if self.screen == 1:
+            val = self.title.run()
+            if val:
+                self.screen = 2
+        
+        if self.screen == 2:
+            self.win.fill((125,185,255))
+            for i in self.visible_sprites:
+                i.update(self.offset)
             
-            k = key.get_pressed()
-            
-            if k[K_RETURN]:
-                self.scrn = 2
-                
-        elif self.scrn == 2:
-            if self.AmMaze.run() == True:
-                self.text = Text()
-                self.AmMaze = AmMaze()
-                self.scrn = 1
-                return True
+            if self.player.rect.y + self.offset >= 150:
+                self.offset += -1
+            if self.player.rect.y + self.offset <= 450:
+                self.offset += 1

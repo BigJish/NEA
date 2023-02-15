@@ -16,7 +16,7 @@ class game_over:
         self.stars(score)
         self.text.txt("Your Score was "+str(score), 48, (255,255,255), (500,350))
         self.text.txt("Press r To Play Agian", 32, (255,255,255), (500,450))
-        self.text.txt("Press enter To Quit", 32, (255,255,255), (500,550))#
+        self.text.txt("Press enter To Quit", 32, (255,255,255), (500,550))
         
         self.update_score(score, user)
         self.update_stars(user)
