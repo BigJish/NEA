@@ -15,11 +15,13 @@ class Platformer:
         self.setup()
     
     def setup(self):
-        for level in range (1,20):
-            atLevel = r(1, 4)
-            for i in range(0, atLevel):
-                yVal = r(20,100)
-                Platform([self.visible_sprites, self.obsicle_sprites], (r(0,900),yVal+420+(level*-80)))
+        yVal = 460+r(40,100)
+        xVal = r(0,900)
+        Platform([self.visible_sprites, self.obsicle_sprites], (xVal,yVal))
+        for level in range(1,20):
+            yVal = r(70,100)
+            xVal = xVal+r(-80, 80)
+            Platform([self.visible_sprites, self.obsicle_sprites], (xVal,460+yVal+(level*-100)))
             
     def run(self):
         self.win.fill((60,60,60))
@@ -34,6 +36,6 @@ class Platformer:
                 i.update(self.offset)
             
             if self.player.rect.y + self.offset >= 150:
-                self.offset += -1
+                self.offset += -2
             if self.player.rect.y + self.offset <= 450:
-                self.offset += 1
+                self.offset += 2

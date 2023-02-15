@@ -13,18 +13,18 @@ class Player(sprite.Sprite):
         sprite_sheet = SpriteSheet(self.idle_img)
         self.idle = []
         for i in range(0,8):
-            self.idle.append(sprite_sheet.get_image(i, 76, 100, 0.6, (0,0,0)))
-        self.image = sprite_sheet.get_image(0, 76, 100, 0.6, (0, 0, 0))
+            self.idle.append(sprite_sheet.get_image(i, 76, 100, 0.55, (0,0,0)))
+        self.image = sprite_sheet.get_image(0, 76, 100, 0.55, (0, 0, 0))
 
         sprite_sheet = SpriteSheet(self.player_left)
         self.left = []
         for i in range(0,8):
-            self.left.append(sprite_sheet.get_image(i, 76, 100, 0.6, (0,0,0)))
+            self.left.append(sprite_sheet.get_image(i, 76, 100, 0.55, (0,0,0)))
         
         sprite_sheet = SpriteSheet(self.player_right)
         self.right = []
         for i in range(0,8):
-            self.right.append(sprite_sheet.get_image(i, 76, 100, 0.6, (0,0,0)))
+            self.right.append(sprite_sheet.get_image(i, 76, 100, 0.55, (0,0,0)))
 
         self.frame_count = 0
         self.rect = self.image.get_rect(topleft = pos)
