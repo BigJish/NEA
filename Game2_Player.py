@@ -1,5 +1,4 @@
 from settings import *
-from sprite_sheet import *
 
 class Player(sprite.Sprite):
     def __init__(self, groups, pos, obsticles):
