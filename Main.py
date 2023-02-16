@@ -24,7 +24,7 @@ class Game:
         self.clock = time.Clock()
 
     def run(self):
-        while self.end == False:
+        while self.end == False:   
             for e in event.get():
                 if e.type == QUIT:
                     self.end = True
@@ -52,8 +52,14 @@ class Game:
                     self.screen_num = 2
                     
             elif self.screen_num == 4:
-                if self.game2.run() == True:
+                val = self.game2.run(self.user)
+                
+                if  val == "exit":
+                    self.game2 = Platformer()
                     self.screen_num = 2
+
+                if val == "reset":
+                    self.game2 = Platform()
                     
             elif self.screen_num == 5:
                 if self.game3.run() == True:
