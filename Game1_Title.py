@@ -1,7 +1,4 @@
-from pygame import *
-from sprite_sheet import SpriteSheet
-from text import *
-import json
+from settings import *
 
 class game1_title:
     def __init__(self):

@@ -14,7 +14,7 @@ class Game_over:
         self.screen.fill((20,20,20))
         self.text.txt("Game Over!", 72, (255,255,255), (500,150))
         self.stars(score)
-        self.text.txt("Your Time was "+str(score), 48, (255,255,255), (500,350))
+        self.text.txt("Your Time was "+str(round(score, 2)), 48, (255,255,255), (500,350))
         self.text.txt("Press r To Play Agian", 32, (255,255,255), (500,450))
         self.text.txt("Press enter To Quit", 32, (255,255,255), (500,550))
         

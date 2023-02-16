@@ -36,7 +36,7 @@ class Platformer:
     def run(self, user):
         self.win.fill((60,60,60))
         if self.screen == 1:
-            val = self.title.run()
+            val = self.title.run(user)
             if val:
                 self.screen = 2
                 self.startTime = t()

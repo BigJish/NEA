@@ -64,7 +64,7 @@ class window:
                 found = True
                 
         if found != True:
-            psword = [{"password":password},{"Total Stars":0},{"Games":{"Game1":{"Highscore":0,"Stars":0,"Status":True,},"Game2":{"Highscore":0,"Stars":0,"Status":False,},"Game3":{"Highscore":0,"Stars":0,"Status":False,},"Game4":{"Highscore":0,"Stars":0,"Status":False,}}}]
+            psword = [{"password":password},{"Total Stars":0},{"Games":{"Game1":{"Highscore":0,"Stars":0,"Status":True,},"Game2":{"Highscore":999999,"Stars":0,"Status":False,},"Game3":{"Highscore":0,"Stars":0,"Status":False,},"Game4":{"Highscore":0,"Stars":0,"Status":False,}}}]
             users[username] = psword
             f = open("Users.txt","w")
             json.dump(users, f)

@@ -15,7 +15,7 @@ class Game:
         self.screen  = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.end = False
         self.title = Title_Screen(user)
-        self.screen_num = 4
+        self.screen_num = 1
         self.game1 = Aerial()
         self.game2 = Platformer()
         self.game3 = Maze()
