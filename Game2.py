@@ -31,7 +31,7 @@ class Platformer:
                 nxVal*=-1
             xVal += nxVal
             Platform([self.visible_sprites, self.obsicle_sprites], (xVal,460+yVal+(level*-100)))
-        self.portal = Portal(self.visible_sprites, (xVal+64, 428+yVal+(level*-100)))
+        self.portal = Portal(self.visible_sprites, (xVal+20, 396+yVal+(level*-100)))
             
     def run(self, user):
         self.win.fill((60,60,60))
@@ -45,9 +45,11 @@ class Platformer:
             self.score = t()-self.startTime
             self.win.fill((125,185,255))
             draw.rect(self.win, (155,118,83), (0,540+self.player.rect.h+self.offset, 1000, 200))
-            self.text.txt2("Time: "+str(round(self.score, 2)), 24, (0,0,0), (400,50))
             for i in self.visible_sprites:
                 i.update(self.offset)
+            self.text.txt2("Time: "+str(round(self.score, 2)), 24, (0,0,0), (400,50))
+            if self.player.rect.colliderect(self.portal.rect):
+                self.screen = 3
             
             if self.player.rect.y + self.offset >= 150:
                 self.offset += -2
