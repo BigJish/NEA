@@ -22,25 +22,25 @@ class Game_over:
         self.update_stars(user)
         
     def stars(self, score):
-        if score <= 10:
+        if score <= 20:
             self.screen.blit(self.star_img, (220, 210))
             self.screen.blit(self.star_img, (470, 210))
             self.screen.blit(self.star_img, (720, 210))
             self.star_num = 3
             
-        elif score <= 20:
+        elif score <= 40:
             self.screen.blit(self.star_img, (220, 210))
             self.screen.blit(self.star_img, (470, 210))
             self.screen.blit(self.empty_star_img, (720, 210))
             self.star_num = 2
             
-        elif score <= 30:
+        elif score <= 60:
             self.screen.blit(self.star_img, (220, 210))
             self.screen.blit(self.empty_star_img, (470, 210))
             self.screen.blit(self.empty_star_img, (740, 210))
             self.star_num = 1
             
-        elif score > 30:
+        elif score > 60:
             self.screen.blit(self.empty_star_img, (220, 210))
             self.screen.blit(self.empty_star_img, (470, 210))
             self.screen.blit(self.empty_star_img, (720, 210))
